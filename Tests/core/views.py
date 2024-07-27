@@ -9,3 +9,6 @@ def personality(request):
 
 def aptitude(request):
     return render(request,'core/aptitude.html')
+
+def choose(request):
+    return render(request, 'core/choose.html')
