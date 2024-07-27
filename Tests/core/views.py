@@ -5,7 +5,7 @@ def testers(request):
     return render(request, 'core/testers.html')
 
 def personality(request):
-    return render(request= 'core/personality.html')
+    return render(request, 'core/personality.html')
 
 def aptitude(request):
-    return render(request= 'core/aptitude.html')
+    return render(request,'core/aptitude.html')

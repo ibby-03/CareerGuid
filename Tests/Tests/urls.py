@@ -20,8 +20,8 @@ from django.urls import path
 from core.views import testers, personality, aptitude
 
 urlpatterns = [
-    path('', aptitude, name='aptitude' ),
-    path('', personality, name='personality'),
+    path('aptitude/', aptitude, name='aptitude' ),
+    path('personality/', personality, name='personality'),
     path('', testers, name='testers'),
     path('admin/', admin.site.urls),
 ]
