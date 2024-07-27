@@ -17,9 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import testers, personality, aptitude, choose
+from core.views import testers, personality, aptitude, choose ,signin ,createaccount,score, assessments
 
 urlpatterns = [
+    path('score/', score, name='score'),
+    path('createaccount/', createaccount, name='createaccount'),
+    path('signin/', signin, name='signin'),
     path('choose/', choose, name='choose'),
     path('aptitude/', aptitude, name='aptitude' ),
     path('personality/', personality, name='personality'),
