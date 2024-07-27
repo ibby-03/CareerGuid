@@ -12,3 +12,15 @@ def aptitude(request):
 
 def choose(request):
     return render(request, 'core/choose.html')
+
+def signin(request):
+    return render(request, 'core/signin.html')
+
+def createaccount(request):
+    return render(request, 'core/createaccount.html')
+
+def score(request):
+    return render(request, 'core/score.html')
+
+def assessments(request):
+    return render(request, 'core/assessments.html')
