@@ -1,22 +1,27 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <script src="https://cdn.tailwindcss.com"></script>
-   <title>Learner</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image Example</title>
 </head>
-
-<body>
+    <!-- <body background="background.jpg">
+    
+        <div>
+            <a href="{% url 'chooseTest' % }">
+                Next
+            </a>
+        </div>
+    </body> -->
+    <body background="background.jpg">
     <div style="display: flex; justify-content: center; flex-wrap: wrap;">
         <div style="width: 100%; text-align: center; margin-bottom: 20px;">
             <h1>Choose your test</h1>
             <h2>Note that you have to take both tests in order for the evaluation</h2>
         </div>
 
-        <a href="{% url 'aptitude' %}" style="text-decoration: none; margin: 20px;">
+        <a href="{% url 'choose' %}" style="text-decoration: none; margin: 20px;">
             <div style="width: 300px; height: 200px; border: 2px solid #000; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; text-align: center;">
                 <p>Personality test</p>
             </div>
@@ -26,6 +31,12 @@
             <div style="width: 300px; height: 200px; border: 2px solid #000; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; text-align: center;">
                 <p>Aptitude test</p>
             </div>
+        </a>
+    </div>
+
+    <div>
+        <a>
+            Next
         </a>
     </div>
 </body>

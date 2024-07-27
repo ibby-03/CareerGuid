@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import testers, personality, aptitude
+from core.views import testers, personality, aptitude, choose
 
 urlpatterns = [
+    path('choose/', choose, name='choose'),
     path('aptitude/', aptitude, name='aptitude' ),
     path('personality/', personality, name='personality'),
     path('', testers, name='testers'),
