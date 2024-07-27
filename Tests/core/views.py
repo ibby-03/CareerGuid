@@ -21,3 +21,12 @@ def score(request):
 
 def assessments(request):
     return render(request, 'core/assessments.html')
+
+def homepage(request):
+    return render(request, 'core/homepage.html')
+
+def roadmappage(request):
+    return render(request, 'core/roadmappage.html')
+
+def currenttrends(request):
+    return render(request, 'core/currenttrends.html')
