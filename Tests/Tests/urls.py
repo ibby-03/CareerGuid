@@ -20,6 +20,7 @@ from django.urls import path
 from core.views import testers, personality, aptitude, choose ,signin ,createaccount,score, assessments
 
 urlpatterns = [
+    path('assessments/', assessments, name='assessments'),
     path('score/', score, name='score'),
     path('createaccount/', createaccount, name='createaccount'),
     path('signin/', signin, name='signin'),
