@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        #chat {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background: #fff;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .message {
+            margin: 10px 0;
+        }
+        .user {
+            text-align: right;
+            color: blue;
+        }
+        .bot {
+            text-align: left;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat">
+        <div id="messages"></div>
+        <input type="text" id="input" placeholder="Type your message here">
+        <button id="send">Send</button>
+    </div>
+
+    <script>
+        document.getElementById('send').addEventListener('click', async () => {
+            const input = document.getElementById('input');
+            const message = input.value;
+            if (!message) return;
+
+            const messagesDiv = document.getElementById('messages');
+
+            // Display user message
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'message user';
+            userMessageDiv.textContent = 'You: ' + message;
+            messagesDiv.appendChild(userMessageDiv);
+
+            // Clear input field
+            input.value = '';
+
+            // Send message to server
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ prompt: message })
+                });
+
+                const data = await response.json();
+
+                // Display bot response
+                const botMessageDiv = document.createElement('div');
+                botMessageDiv.className = 'message bot';
+                botMessageDiv.textContent = 'Derick: ' + data.response;
+                messagesDiv.appendChild(botMessageDiv);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        document.getElementById('input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('send').click();
+            }
+        });
+    </script>
+</body>
+</html>
