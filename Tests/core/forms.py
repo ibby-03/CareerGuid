@@ -1,6 +1,37 @@
+# core/forms.py
+
 from django import forms
+from .models import Question
+from .models import AptitudeQuestion, AptitudeAnswer
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+
+class QuizForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        questions = kwargs.pop('questions')
+        super().__init__(*args, **kwargs)
+        for question in questions:
+            self.fields[f'question_{question.id}'] = forms.ChoiceField(
+                label=question.text,
+                choices=[
+                    (1, 'Strongly Disagree'),
+                    (2, 'Disagree'),
+                    (3, 'Neutral'),
+                    (4, 'Agree'),
+                    (5, 'Strongly Agree')
+                ],
+                widget=forms.RadioSelect
+            )
+
+
+class AptitudeForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super(AptitudeForm, self).__init__(*args, **kwargs)
+        questions = AptitudeQuestion.objects.all()
+        for question in questions:
+            self.fields[str(question.id)] = forms.CharField(label=question.question_text, widget=forms.Textarea)
+
+            
 
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={

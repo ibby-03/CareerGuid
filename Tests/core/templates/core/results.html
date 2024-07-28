@@ -1,0 +1,18 @@
+<!-- core/templates/core/results.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+</head>
+<body>
+    <h1>Quiz Results</h1>
+    <ul>
+        {% for result in results %}
+            <li>{{ result.trait }}: {{ result.score }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

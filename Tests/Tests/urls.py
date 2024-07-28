@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as auth_views
 
-from core.views import testers, personality, aptitude,signin ,createaccount,score, assessments, currenttrends, homepage, roadmappage
+from core.views import testers, personality, aptitude,signin ,createaccount,score, assessments, currenttrends, homepage, roadmappage,take_quiz,aptitude_result,take_aptitude_test,quiz_results
 from core.forms import LoginForm 
 
 urlpatterns = [
@@ -26,8 +26,10 @@ urlpatterns = [
     path('score/', score, name='score'),
     path('createaccount/', createaccount, name='createaccount'),
     path('signin/', signin, name='signin'),
-    path('aptitude/', aptitude, name='aptitude' ),
-    path('personality/', personality, name='personality'),
+    path('aptitude/', take_aptitude_test, name='aptitude' ),
+    path('personality/', take_quiz, name='personality'),
+    path('results/',quiz_results, name='quiz_results'),
+     path('aptitude_result/', aptitude_result, name='aptitude_results'),
     path('', testers, name='testers'),
     path('admin/', admin.site.urls),
     #path('login/', auth_views.LoginViews.as_view(template_name='core/signin.html', authentication_form=LoginForm), name='login')
