@@ -1,5 +1,3 @@
-# core/forms.py
-
 from django import forms
 from .models import Question
 from .models import AptitudeQuestion, AptitudeAnswer
@@ -30,6 +28,7 @@ class AptitudeForm(forms.Form):
         questions = AptitudeQuestion.objects.all()
         for question in questions:
             self.fields[str(question.id)] = forms.CharField(label=question.question_text, widget=forms.Textarea)
+
 
             
 
@@ -66,6 +65,5 @@ class SignupForm(UserCreationForm):
         'placeholder': 'Repeat password',
         'class': 'w-full py-4 px-6 rounded-xl'
     }))
-
 
 

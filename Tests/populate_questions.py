@@ -36,5 +36,8 @@ questions = [
 
 for text, category in questions:
     Question.objects.create(text=text, category=category)
+<<<<<<< HEAD
 
 print("Questions populated successfully!")
+=======
+>>>>>>> 5c5a13cb11c281c8f75415d6aff0591a1535b8dc
