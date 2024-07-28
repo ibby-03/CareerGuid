@@ -9,8 +9,13 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+import firebase_admin
+from firebase_admin import credentials
 
 from pathlib import Path
+
+#Firebase
+cred = credentials.Certificate('path/to/your/')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'path.to.FirebaseAuthMiddleware',
 ]
 
 ROOT_URLCONF = 'Tests.urls'
@@ -122,3 +128,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings.py
+AUTHENTICATION_BACKENDS = [
+    'path.to.FirebaseAuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
