@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import SignupForm
 
 # Create your views here.
 def testers(request):
@@ -11,10 +12,12 @@ def aptitude(request):
     return render(request,'core/aptitude.html')
 
 def signin(request):
-    return render(request, 'core/signin.html')
+    context ={}
+    return render(request, 'core/signin.html', context)
 
 def createaccount(request):
-    return render(request, 'core/createaccount.html')
+    form = SignupForm()
+    return render(request, 'core/createaccount.html', {'form':form})
 
 def score(request):
     return render(request, 'core/score.html')
