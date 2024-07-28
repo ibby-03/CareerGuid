@@ -16,8 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth import views as auth_views
 
+<<<<<<< HEAD
 from core.views import testers, personality, aptitude,signin ,createaccount,score, assessments, currenttrends, homepage, roadmappage
+=======
+from core.views import testers, personality, aptitude,signin ,createaccount,score, assessments 
+from core.forms import LoginForm 
+>>>>>>> f778c9666e6d1e971fc20bb786283ca9a011679e
 
 urlpatterns = [
     path('assessments/', assessments, name='assessments'),
@@ -28,7 +34,11 @@ urlpatterns = [
     path('personality/', personality, name='personality'),
     path('', testers, name='testers'),
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('currenttrends/', currenttrends, name='currenttrends'),
     path('homepage/', homepage, name='homepage'),
     path('roadmappage/', roadmappage, name='roadmappage'),
+=======
+    #path('login/', auth_views.LoginViews.as_view(template_name='core/signin.html', authentication_form=LoginForm), name='login')
+>>>>>>> f778c9666e6d1e971fc20bb786283ca9a011679e
 ]

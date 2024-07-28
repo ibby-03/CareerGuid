@@ -16,8 +16,24 @@ def signin(request):
     return render(request, 'core/signin.html', context)
 
 def createaccount(request):
+<<<<<<< HEAD
     form = SignupForm()
     return render(request, 'core/createaccount.html', {'form':form})
+=======
+    context = {}
+    return render(request, 'core/createaccount.html', context)
+    # if request.method == 'POST':
+    #     form = SignupForm(request.POST)
+        
+    #     if form.is_valid():
+    #         form.save()
+            
+    #         return redirect('/login/')
+    # else:  
+    #     form = SignupForm()
+        
+    # return render(request, 'core/createaccount.html', {'form':form})
+>>>>>>> f778c9666e6d1e971fc20bb786283ca9a011679e
 
 def score(request):
     return render(request, 'core/score.html')
