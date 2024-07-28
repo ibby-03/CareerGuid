@@ -1,28 +1,109 @@
 <!DOCTYPE html>
-<html>
-<div class="CareerRoadmaps" style="width: 1920px; height: 1080px; position: relative; background: white">
-  <div class="Rectangle15" style="width: 1920px; height: 131px; left: 0px; top: 0px; position: absolute; background: white"></div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Path Selector</title>
+  <link rel="stylesheet" href="roadmappage.css">
+</head>
+<body>
+  <div class="CareerRoadmaps">
+    <div class="Rectangle15"></div>
     
-    <div class="BasicUser" style="width: 83px; height: 80px; padding-left: 3.46px; padding-right: 3.46px; padding-top: 3.33px; padding-bottom: 3.33px; left: 1799px; top: 21px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
-      <img class="Icon" style="width: 76.08px; height: 73.33px" src="https://via.placeholder.com/76x73" />
+    <div class="BasicUser">
+      <img class="Icon" src="https://via.placeholder.com/76x73" />
     </div>
     
-    <div class="CareerRoadmaps" style="width: 502px; height: 70px; left: 14px; top: 24px; position: absolute; text-align: center; color: rgba(95.19, 146.82, 35.60, 0.87); font-size: 50px; font-family: Paytone One; font-weight: 400; line-height: 86px; word-wrap: break-word">
+    <div class="CareerRoadmapsTitle">
       Career roadmaps
     </div>
 
-  <div class="Rectangle16" style="width: 1920px; height: 949px; left: 0px; top: 131px; position: absolute; background: rgba(158.15, 193.57, 117.27, 0.87)"></div>
-  <div class="Rectangle2" style="width: 1759px; height: 691px; left: 55px; top: 264px; position: absolute; background: #FAFAFA; border-radius: 100px"></div>
-  <div class="Rectangle18" style="width: 226px; height: 73px; left: 1621px; top: 972px; position: absolute; background: #719E3D; border-radius: 300px"></div>
+    <div class="Rectangle16"></div>
+    <div class="Rectangle2"></div>
+    <div class="Rectangle18"></div>
     
-    <div class="SelectTheDesiredCareerField" style="width: 647px; height: 70px; left: 14px; top: 163px; position: absolute; text-align: center; color: rgba(95.19, 146.82, 35.60, 0.87); font-size: 40px; font-family: Paytone One; font-weight: 400; line-height: 49px; word-wrap: break-word">
-      Select the desired career field
+    <div class="SelectTheDesiredCareerField">
+      <form id="careerForm" action="roadmappageresults.html" onsubmit="return handleSubmit()">
+        <label for="careerpath">Select the desired career field</label>
+        <select id="careerpath" name="careerpath" onChange="handleSelectChange(event)">
+          <option value="none"></option>
+          <option value="HCM">Health Care and Medicine</option>
+          <option value="ET">Education and Training</option>
+          <option value="IT">Information Technology</option>
+          <option value="EngT">Engineering and Technology</option>
+          <option value="BF">Business and Finance</option>
+          <option value="AH">Art and Humanities</option>
+          <option value="L">Law</option>
+        </select>
+        <br><br>
+        <a href="{% url 'roadmappageresults' %}" class="submit-button">Submit</a>
+      </form>
     </div>
-    
-    <div class="Continue" style="left: 1654px; top: 980px; position: absolute; color: white; font-size: 35px; font-family: Paytone One; font-weight: 400; word-wrap: break-word">
+
+    <h2>Career Path Results</h2>
+      <div id="result"></div>
+
+    <div class="Continue">
       Continue
     </div>
-  <div class="Rectangle21" style="width: 896px; height: 71px; left: 704px; top: 162px; position: absolute; background: #D9D9D9; border-radius: 300px"></div>
-</div>
+  </div>
 
+  <script>
+    function handleSelectChange(event) {
+      const selectedValue = event.target.value;
+    
+      // Perform action based on the selected value
+      if (selectedValue === 'none') {
+        console.log('Please select a career field.');
+      } else {
+        console.log(`You selected: ${selectedValue}`);
+    
+        // Optionally, you can redirect to a results page or perform other actions
+        // const targetUrl = `results.html?careerpath=${selectedValue}`;
+        // window.location.href = targetUrl;
+        const resultDiv = document.getElementById('result');
+        
+        const careerPaths = {
+          HCM: `Health Care and Medicine: Explore careers in health care, including doctors, nurses, and medical researchers.
+           High School
+
+              Focus on Science and Math Courses: Take courses in biology, chemistry, physics, and mathematics. These subjects form the foundation for medical knowledge.
+              
+              Volunteer or Work in Healthcare Settings: Gain exposure to the healthcare environment by volunteering or working in hospitals, clinics, or nursing homes.
+              
+              Extracurricular Activities: Participate in extracurricular activities that demonstrate leadership, teamwork, and a commitment to service. Joining clubs like the health occupations students of America (HOSA) can be beneficial.
+              
+              Research Careers in Healthcare: Start researching different careers in healthcare to understand the educational requirements, job duties, and career outlook for each.`,
+          ET: 'Education and Training: Discover opportunities in education and training, from teaching to corporate training programs.',
+          IT: 'Information Technology: Learn about careers in IT, such as software development, network administration, and cybersecurity.',
+          EngT: 'Engineering and Technology: Investigate careers in engineering and technology, including mechanical, civil, and electrical engineering.',
+          BF: 'Business and Finance: Find out about careers in business and finance, from accounting to investment banking.',
+          AH: 'Art and Humanities: Explore careers in the arts and humanities, including roles in museums, theaters, and libraries.',
+          L: 'Law: Learn about careers in law, including lawyers, paralegals, and legal analysts.'
+        };
+        
+        if (selectedValue in careerPaths) {
+          resultDiv.textContent = careerPaths[selectedValue];
+        } else 
+          resultDiv.textContent = 'Invalid career path selected.';
+      }
+    }
+    
+    function handleSubmit() {
+      const selectElement = document.getElementById('careerpath');
+      const selectedValue = selectElement.value;
+      console.log(selectElement)
+      {% comment %} if (selectedValue === 'none') {
+        alert('Please select a career field.');
+        return false;
+      }
+      
+      const targetUrl = `results.html?careerpath=${selectedValue}`;
+      window.location.href = targetUrl;
+      return false; // Prevent form submission {% endcomment %}
+    }
+    
+
+    </script>
+</body>
 </html>

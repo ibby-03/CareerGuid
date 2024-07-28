@@ -1,87 +1,121 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-        <script src="https://cdn.tailwindcss.com"></script>
-
-        <title> Personality Test | Learning App </title>
-    </head>
-
-    <body>
-        <h1>Personality Test</h1>
-        <h3>Please answer the following questions</h3>
-
-        <div>
-            <p>How do you usually make decisions?</p>
-            
-        </div>
-
-        <div>
-            <p>How do you prefer to spend your free time?</p>
-        </div>
-
-        <div>
-            <p>How do you handle stress or pressure?</p>
-        </div>
-
-        <div>
-            <p>What type of environment do you work best in?</p>
-        </div>
-
-        <div>
-            <p>5How do you approach new challenges?</p>
-        </div>
-
-        <div>
-            <p>Which best describes your communication style? </p>
-        </div>
-
-        <div>
-            <p>How do you prefer to learn new information?</p>
-        </div>
-
-        <div>
-            <p>What motivates you more?</p>
-        </div>
-
-        <div>
-            <p>How do you typically express your emotions?</p>
-        </div>
-
-        <div>
-            <p>How do you handle conflict?</p>
-        </div>
-
-        <div>
-            <p>11. What role do you often take in group settings?</p>
-        </div>
-
-        <div>
-            <p>12. How do you approach planning for the future?</p>
-        </div>
-
-        <div>
-            <p>13. Which best describes your attention to detail?</p>
-        </div>
-
-        <div>
-            <p>14. What role do you often take in group settings?</p>
-        </div>
-
-        <div>
-            <p>15. What role do you often take in group settings?</p>
-        </div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Personality Test | Learning App</title>
+</head>
+<body>
+    <div class="form-container p-8 max-w-lg mx-auto bg-white shadow-md rounded-lg">
+        <h1 class="text-2xl font-bold mb-4">Personality Test</h1>
+        <h3 class="text-lg mb-6">Please answer the following questions</h3>
         
+        <form action="your_form_processing_url" method="post">
+            <!-- Question 1 -->
+            <div class="mb-4">
+                <p class="mb-2">How do you usually make decisions?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="decisionMaking" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="mb-4">
+                <p class="mb-2">How do you prefer to spend your free time?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="freeTime" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="mb-4">
+                <p class="mb-2">How do you handle stress or pressure?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="stressHandling" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="mb-4">
+                <p class="mb-2">What type of environment do you work best in?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="workEnvironment" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="mb-4">
+                <p class="mb-2">How do you approach new challenges?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="challenges" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="mb-4">
+                <p class="mb-2">Which best describes your communication style?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="communicationStyle" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="mb-4">
+                <p class="mb-2">How do you prefer to learn new information?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="learningStyle" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="mb-4">
+                <p class="mb-2">What motivates you more?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="motivation" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="mb-4">
+                <p class="mb-2">How do you typically express your emotions?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="emotions" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="mb-4">
+                <p class="mb-2">How do you handle conflict?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="conflict" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="mb-4">
+                <p class="mb-2">What role do you often take in group settings?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="groupRole" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="mb-4">
+                <p class="mb-2">How do you approach planning for the future?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="futurePlanning" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="mb-4">
+                <p class="mb-2">Which best describes your attention to detail?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="attentionDetail" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="mb-4">
+                <p class="mb-2">What role do you often take in group settings?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="groupRole" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Question 15 -->
+            <div class="mb-4">
+                <p class="mb-2">What role do you often take in group settings?</p>
+                <textarea class="w-full p-2 border border-gray-300 rounded" name="groupRole" rows="3" placeholder="Enter your answer here"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mb-4">
+                <button type="submit" class="w-full p-2 bg-green-600 text-white rounded">Submit</button>
+            </div>
+        </form>
+        
+        <!-- Continue Link -->
         <p>
-            <a href="{% url 'score' %}" style="font-weight: bold; color: #145D13;">
+            <a href="{% url 'score' %}" class="font-bold text-green-800">
                 Continue
             </a>
         </p>
 
-
-    </body>
-
+        
+    </div>
+</body>
 </html>

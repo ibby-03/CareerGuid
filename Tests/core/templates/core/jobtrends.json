@@ -1,0 +1,55 @@
+{healthcareJobTrends2024:
+    [
+    { 
+    trend: "Artificial Intelligence (AI) and Machine Learning",
+    description: "Increasing use in diagnostics, treatment plans, and administrative tasks.",
+    sources: ["source1", "source2"]
+  },
+  {
+    trend: "Telehealth and Remote Patient Monitoring",
+    description: "Growth in virtual care and remote monitoring technologies.",
+    sources: ["source1", "source2"]
+  },
+  {
+    trend: "Sustainability and Green Practices",
+    description: "Focus on eco-friendly practices in healthcare facilities.",
+    sources: ["source1", "source3"]
+  },
+  {
+    trend: "Data Sharing and Interoperability",
+    description: "Enhanced sharing of healthcare data to improve patient outcomes.",
+    sources: ["source1", "source2"]
+  },
+  {
+    trend: "Personalized Medicine",
+    description: "Growth in treatments tailored to individual genetic profiles.",
+    sources: ["source1", "source3"]
+  },
+  {
+    trend: "Mental Health Services",
+    description: "Increasing demand for mental health professionals and services.",
+    sources: ["source2", "source3"]
+  },
+  {
+    trend: "Preventive Care and Wellness Programs",
+    description: "Expansion of programs aimed at disease prevention and health maintenance.",
+    sources: ["source2", "source3"]
+  },
+  {
+    trend: "Healthcare Workforce Adaptation",
+    description: "Adjusting to labor shortages and changing workforce demographics.",
+    sources: ["source2", "source3"]
+  },
+  {
+    trend: "Value-Based Care Models",
+    description: "Shift towards care models that focus on patient outcomes rather than services rendered.",
+    sources: ["source1", "source2"]
+  },
+  {
+    trend: "Integration of Social Care",
+    description: "Recognizing the impact of social determinants on health and integrating social care with medical care.",
+    sources: ["source1", "source3"]
+  }
+];
+}
+

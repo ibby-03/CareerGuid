@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .CareerRoadmaps {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    background: white;
+  }
+  
+  .Rectangle15 {
+    width: 1920px;
+    height: 131px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: white;
+  }
+  
+  .BasicUser {
+    width: 83px;
+    height: 80px;
+    padding-left: 3.46px;
+    padding-right: 3.46px;
+    padding-top: 3.33px;
+    padding-bottom: 3.33px;
+    left: 1799px;
+    top: 21px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+  }
+  
+  .Icon {
+    width: 76.08px;
+    height: 73.33px;
+  }
+  
+  .CareerRoadmapsTitle {
+    width: 502px;
+    height: 70px;
+    left: 14px;
+    top: 24px;
+    position: absolute;
+    text-align: center;
+    color: rgba(95.19, 146.82, 35.60, 0.87);
+    font-size: 50px;
+    font-family: Paytone One;
+    font-weight: 400;
+    line-height: 86px;
+    word-wrap: break-word;
+  }
+  
+  .Rectangle16 {
+    width: 1920px;
+    height: 949px;
+    left: 0px;
+    top: 131px;
+    position: absolute;
+    background: rgba(158.15, 193.57, 117.27, 0.87);
+  }
+  
+  .Rectangle2 {
+    width: 1759px;
+    height: 691px;
+    left: 55px;
+    top: 264px;
+    position: absolute;
+    background: #FAFAFA;
+    border-radius: 100px;
+  }
+  
+  .Rectangle18 {
+    width: 226px;
+    height: 73px;
+    left: 1621px;
+    top: 972px;
+    position: absolute;
+    background: #719E3D;
+    border-radius: 300px;
+  }
+  
+  .SelectTheDesiredCareerField {
+    width: 647px;
+    height: 70px;
+    left: 14px;
+    top: 163px;
+    position: absolute;
+    text-align: center;
+    color: rgba(95.19, 146.82, 35.60, 0.87);
+    font-size: 40px;
+    font-family: Paytone One;
+    font-weight: 400;
+    line-height: 49px;
+    word-wrap: break-word;
+  }
+  
+  .result {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  .submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .Continue {
+    left: 1654px;
+    top: 980px;
+    position: absolute;
+    color: white;
+    font-size: 35px;
+    font-family: Paytone One;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
