@@ -30,8 +30,6 @@ class AptitudeForm(forms.Form):
             self.fields[str(question.id)] = forms.CharField(label=question.question_text, widget=forms.Textarea)
 
 
-            
-
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Your username',
@@ -65,5 +63,6 @@ class SignupForm(UserCreationForm):
         'placeholder': 'Repeat password',
         'class': 'w-full py-4 px-6 rounded-xl'
     }))
+
 
 
