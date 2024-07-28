@@ -2,7 +2,11 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as auth_views
 
+<<<<<<< HEAD
+from core.views import testers, personality, aptitude,signin ,createaccount,score, assessments, currenttrends, homepage, roadmappage, roadmappageresults
+=======
 from core.views import testers, personality, aptitude, signin, createaccount, score, assessments, currenttrends, homepage, roadmappage, SignUpView, LoginView
+>>>>>>> a292e44f15292224610bfd12345b7f0e881dc527
 from core.forms import LoginForm 
 
 urlpatterns = [
@@ -17,6 +21,10 @@ urlpatterns = [
     path('homepage/', homepage, name='homepage'),
     path('currenttrends/', currenttrends, name='currenttrends'),
     path('roadmappage/', roadmappage, name='roadmappage'),
+<<<<<<< HEAD
+    path('roadmappageresults/', roadmappageresults, name='roadmappageresults'),
+=======
     path('signup/', SignUpView.as_view(), name='signup'),
     path('login/', LoginView.as_view(), name='login'),
+>>>>>>> a292e44f15292224610bfd12345b7f0e881dc527
 ]

@@ -41,6 +41,10 @@ def roadmappage(request):
 def currenttrends(request):
     return render(request, 'core/currenttrends.html')
 
+<<<<<<< HEAD
+def roadmappageresults(request):
+    return render(request, 'core/roadmappageresults.html')
+=======
 # New views for Firebase authentication
 @csrf_exempt
 class SignUpView(APIView):
@@ -71,3 +75,4 @@ class LoginView(APIView):
                 return JsonResponse({'error': 'Authentication failed'}, status=status.HTTP_401_UNAUTHORIZED)
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+>>>>>>> a292e44f15292224610bfd12345b7f0e881dc527
