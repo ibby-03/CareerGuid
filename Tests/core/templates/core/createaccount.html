@@ -15,11 +15,12 @@
                 <h2 style="color: #145D13; font-size: 36px; font-family: 'Paytone One';">Welcome to</h2>
             </div>
             <h3 style="color: #145D13; font-size: 36px; font-family: 'Paytone One'; text-align: center;">Create your account</h3>
-            <form action="{% url 'assessments' %}" method="get" style="margin-top: 40px;">
-                <input type="text" placeholder="First name" style="width: 100%; padding: 20px; margin-bottom: 20px; font-size: 24px; border: 1px solid #145D13; border-radius: 10px; background: #D9D9D9;">
-                <input type="text" placeholder="Last name" style="width: 100%; padding: 20px; margin-bottom: 20px; font-size: 24px; border: 1px solid #145D13; border-radius: 10px; background: #D9D9D9;">
-                <input type="email" placeholder="Email address" style="width: 100%; padding: 20px; margin-bottom: 20px; font-size: 24px; border: 1px solid #145D13; border-radius: 10px; background: #D9D9D9;">
-                <input type="text" placeholder="Grade" style="width: 100%; padding: 20px; margin-bottom: 40px; font-size: 24px; border: 1px solid #145D13; border-radius: 10px; background: #D9D9D9;">
+            <form id="signup-form" style="margin-top: 40px;">
+                <input type="text" id="firstname" placeholder="First name" style="width: 100%; padding: 20px; margin-bottom: 20px; font-size: 24px; border: 1px solid #145D13; border-radius: 10px; background: #D9D9D9;" required>
+                <input type="text" id="lastname" placeholder="Last name" style="width: 100%; padding: 20px; margin-bottom: 20px; font-size: 24px; border: 1px solid #145D13; border-radius: 10px; background: #D9D9D9;" required>
+                <input type="email" id="email" placeholder="Email address" style="width: 100%; padding: 20px; margin-bottom: 20px; font-size: 24px; border: 1px solid #145D13; border-radius: 10px; background: #D9D9D9;" required>
+                <input type="password" id="password" placeholder="Password" style="width: 100%; padding: 20px; margin-bottom: 20px; font-size: 24px; border: 1px solid #145D13; border-radius: 10px; background: #D9D9D9;" required>
+                <input type="text" id="grade" placeholder="Grade" style="width: 100%; padding: 20px; margin-bottom: 40px; font-size: 24px; border: 1px solid #145D13; border-radius: 10px; background: #D9D9D9;" required>
                 <input type="submit" value="Create Account" style="width: 100%; padding: 20px; font-size: 24px; color: white; background: #145D13; border: none; border-radius: 10px; cursor: pointer;">
             </form>
             <div style="text-align: center; margin-top: 20px;">
@@ -27,5 +28,29 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch('/signup/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                alert('Account created successfully');
+                // Redirect to login page
+                window.location.href = '/signin/';
+            } else {
+                alert('Error: ' + data.error);
+            }
+        });
+    </script>
 </body>
 </html>
