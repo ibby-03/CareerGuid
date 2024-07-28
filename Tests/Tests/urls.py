@@ -30,5 +30,5 @@ urlpatterns = [
     path('personality/', personality, name='personality'),
     path('', testers, name='testers'),
     path('admin/', admin.site.urls),
-    path('login/', auth_views.LoginViews.as_view(template_name='core/signin.html', authentication_form=LoginForm), name='login')
+    #path('login/', auth_views.LoginViews.as_view(template_name='core/signin.html', authentication_form=LoginForm), name='login')
 ]
