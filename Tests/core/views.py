@@ -44,3 +44,6 @@ def roadmappage(request):
 
 def currenttrends(request):
     return render(request, 'core/currenttrends.html')
+
+def roadmappageresults(request):
+    return render(request, 'core/roadmappageresults.html')

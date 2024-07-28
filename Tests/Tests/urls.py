@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as auth_views
 
-from core.views import testers, personality, aptitude,signin ,createaccount,score, assessments, currenttrends, homepage, roadmappage
+from core.views import testers, personality, aptitude,signin ,createaccount,score, assessments, currenttrends, homepage, roadmappage, roadmappageresults
 from core.forms import LoginForm 
 
 urlpatterns = [
@@ -34,4 +34,5 @@ urlpatterns = [
     path('homepage/', homepage, name='homepage'),
     path('currenttrends/', currenttrends, name='currenttrends'),
     path('roadmappage/', roadmappage, name='roadmappage'),
+    path('roadmappageresults/', roadmappageresults, name='roadmappageresults'),
 ]
